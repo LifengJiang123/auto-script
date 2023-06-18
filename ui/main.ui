@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1375</width>
+    <height>753</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,5">
+    <item>
+     <widget class="QWidget" name="widget_left_menu" native="true">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    padding: 4px;
+	font: 10pt &quot;微软雅黑&quot;;
+	border:none;
+	background-color: rgba(255, 255, 224, 0%);
+	text-align:left
+}
+ 
+QPushButton:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #FAFBFE, stop: 1 #DCDEF1);
+}
+ 
+QPushButton:pressed {
+    background-color: #333;
+    border-color: #555;
+    color: #AAA;
+}
+ 
+QPushButton:disabled {
+    color: #333333;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QPushButton" name="btn_left_menu">
+         <property name="text">
+          <string>   Hide Menu</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../res/image.qrc">
+           <normaloff>:/menu_img/img/left_img.png</normaloff>
+           <normalon>:/menu_img/img/menu_img.png</normalon>:/menu_img/img/left_img.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="listWidget">
+         <property name="styleSheet">
+          <string notr="true">QListView {
+    outline:none;
+    show-decoration-selected: 1;
+	border:none;
+	background-color: rgba(255, 255, 224, 0%);
+}
+
+#listWidget::item {
+    color: #000000;
+    border: transparent;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px;
+}
+
+
+#listWidget::item:hover {
+    background-color: #f5f5f5;
+}
+
+#listWidget::item:selected {
+    border-left: 3px solid #777777;
+}</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>   Home</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../res/image.qrc">
+            <normaloff>:/menu_img/img/home_img.png</normaloff>:/menu_img/img/home_img.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>   开关机</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../res/image.qrc">
+            <normaloff>:/menu_img/img/boot_img.png</normaloff>:/menu_img/img/boot_img.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>   冷启动</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../res/image.qrc">
+            <normaloff>:/menu_img/img/coldstart_img.png</normaloff>:/menu_img/img/coldstart_img.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>   内存</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../res/image.qrc">
+            <normaloff>:/menu_img/img/mem_img.png</normaloff>:/menu_img/img/mem_img.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>   Check List</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../res/image.qrc">
+            <normaloff>:/menu_img/img/checklist_img.png</normaloff>:/menu_img/img/checklist_img.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>   常用命令</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../res/image.qrc">
+            <normaloff>:/menu_img/img/cmd_img.png</normaloff>:/menu_img/img/cmd_img.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>   工具</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../res/image.qrc">
+            <normaloff>:/menu_img/img/tool_img.png</normaloff>:/menu_img/img/tool_img.png</iconset>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="page_home"/>
+      <widget class="QWidget" name="page_boot">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border: 1px solid #555;
+    padding: 4px;
+	font: 10pt &quot;微软雅黑&quot;;
+
+}
+ 
+QPushButton:hover {
+    background-color: #999;
+}
+ 
+QPushButton:pressed {
+    background-color: #333;
+    border-color: #555;
+    color: #AAA;
+}
+ 
+QPushButton:disabled {
+    color: #333333;
+}
+
+QComboBox{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+QTextEdit{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+/*
+QComboBox {
+    background-color: #AAA;
+    border: 1px solid #555;
+    color: black;
+}
+*/
+/*
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    border-left: 1px solid #333333;
+}
+*/
+
+
+QLabel{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+#label_page1{
+	border: 1px solid gray;
+}
+</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,7">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,3,3">
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>模式选择</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBox_boot_mode_selection">
+                <item>
+                 <property name="text">
+                  <string>开机</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>关机</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>重启</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>版本选择</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBox_boot_android_version_selection">
+                <item>
+                 <property name="text">
+                  <string>A12</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>A13</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>A14</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>在线/离线解析</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBox_boot_online_offline_selection">
+                <item>
+                 <property name="text">
+                  <string>在线</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>离线</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,3,3">
+            <item>
+             <widget class="QLineEdit" name="lineEdit_2">
+              <property name="placeholderText">
+               <string>ap文件路径</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_boot_file_selection">
+              <property name="text">
+               <string>选择文件</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_boot_parse">
+              <property name="text">
+               <string>开始解析</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEdit_show_boot_result"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_coldstart">
+       <property name="styleSheet">
+        <string notr="true">QCheckBox{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+QLineEdit{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+QPushButton{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+QLabel{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+#label_coldstart_output{
+	border: 1px solid gray;
+}</string>
+       </property>
+       <widget class="QPushButton" name="btn_coldstart_test">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>20</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>选择测试文件</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res/image.qrc">
+          <normaloff>:/menu_img/img/file_img.png</normaloff>:/menu_img/img/file_img.png</iconset>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_coldstart_compared">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>70</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>选择对比文件</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res/image.qrc">
+          <normaloff>:/menu_img/img/file_img.png</normaloff>:/menu_img/img/file_img.png</iconset>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_coldstart_test">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>191</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>测试文件路径</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_coldstart_compared">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>191</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>对比文件路径</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_coldstart_start">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>50</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>开始</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget_coldstart_output">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>1101</width>
+          <height>511</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_memory">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>250</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_checklist">
+       <property name="styleSheet">
+        <string notr="true">QCheckBox{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+QGroupBox{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+QPushButton{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+QLabel{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+QLineEdit{
+	font: 10pt &quot;微软雅黑&quot;;
+}
+
+#label_checklist_output{
+	border: 1px solid gray;
+}</string>
+       </property>
+       <widget class="QPushButton" name="btn_checklist_start">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>390</y>
+          <width>201</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>开始检查</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>50</y>
+          <width>711</width>
+          <height>591</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>OutPut</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_checklist_output">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>40</y>
+          <width>231</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>检查项</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QCheckBox" name="checkBox_cpu">
+           <property name="text">
+            <string>CPU</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_gpu">
+           <property name="text">
+            <string>GPU</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_ddr">
+           <property name="text">
+            <string>DDR</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_mem">
+           <property name="text">
+            <string>Memory</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_others">
+           <property name="text">
+            <string>Others</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>330</y>
+          <width>211</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>文件选择</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>330</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>文件选择</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_command">
+       <widget class="QPushButton" name="btn_cmd_start">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>40</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>开始搜索</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_cmd_search">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>40</y>
+          <width>231</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>关键字</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget_cmd_output">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>100</y>
+          <width>1041</width>
+          <height>551</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_tool"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1375</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar {
+	font: 10pt &quot;微软雅黑&quot;;
+}</string>
+   </property>
+   <widget class="QMenu" name="menu_connect_devices">
+    <property name="title">
+     <string>连接设备</string>
+    </property>
+   </widget>
+   <addaction name="menu_connect_devices"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../res/image.qrc"/>
+ </resources>
+ <connections/>
+</ui>

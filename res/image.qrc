@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="menu_img">
+    <file>img/cmd_img.png</file>
+    <file>img/mem_img.png</file>
+    <file>img/connect_img.png</file>
+    <file>img/file_img.png</file>
+    <file>img/checklist_img.png</file>
+    <file>img/boot_img.png</file>
+    <file>img/coldstart_img.png</file>
+    <file>img/home_img.png</file>
+    <file>img/left_img.png</file>
+    <file>img/menu_img.png</file>
+    <file>img/tool_img.png</file>
+  </qresource>
+</RCC>
